@@ -2,8 +2,8 @@
 IBFest is the research code for ion beam figuring (IBF) system for synchrotron X-ray mirrors designed and developed by the Optical Metrology and Fabrication Group at National Synchrotron Light Source II (NSLS-II), NY, US. 
 
 ## Implemented algorithms
-- [x] Rectangular surface error map simulation using 2D Lengendre polynomials
-- [x] 2D Beam Removal Function (BRF) fittintg and learning
+- Rectangular surface error map simulation using 2D Lengendre polynomials
+- 2D Beam Removal Function (BRF) fittintg and learning
 - Dwell time calculation algorithms
   - Fourier domain methods
     - [x] Fourier transform + Inverse filtering [2]
