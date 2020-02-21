@@ -26,7 +26,16 @@ function [T ... [s] dwell map of the 2D IBF
 %                 i=1
 %         k   ui'rd
 %   T = sigma ------vi,  k <= nr, where si are the sigular values
-%        i=1    si   
+%        i=1    si
+%
+% Reference:
+%   Zhou, L., Dai, Y. F., Xie, X. H., Jiao, C. J., & Li, S. Y. (2007). 
+%   Model and method to determine dwell time in ion beam figuring.
+%   Nanotechnol. Precis. Eng., 5(8–9), 107-112.
+%
+% Info:
+%   Contact: tianyiwang666@gmail.com (Dr WANG Tianyi)
+%   Copyright reserved.
 
 % 1. Dump X_P, Y_P dwell point positions into a 2D array as
 %   |  u1    v1 |   P1
