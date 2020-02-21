@@ -2,6 +2,8 @@ clc;
 close all;
 clear;
 
+addpath(genpath('../../../ibf_engine'));
+
 %% 0. Define the pixel size and height units
 pixel_m = 0.1e-3;   % resolution [m]
 zUnit_m = 50e-9;    % height [m]
