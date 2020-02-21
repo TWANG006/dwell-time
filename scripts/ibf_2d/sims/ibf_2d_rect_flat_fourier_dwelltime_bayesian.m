@@ -23,42 +23,16 @@ BRF_params.lat_res_brf = pixel_m;
 d_pix = BRF_params.d_pix;
 r_pix = d_pix * 0.5;
 
-% options = struct(...
-%     'Algorithm', 'Iterative-FFT',...
-%     'maxIters', 10, ...
-%     'PV_dif', 0.001e-9, ...[m]
-%     'RMS_dif', 0.02e-9, ...[m]
-%     'dwellTime_dif', 60, ...[s]
-%     'isDownSampling', true, ...
-%     'samplingInterval', 1e-3 ... [m]
-% );
-
 options = struct(...
-    'Algorithm', 'FFT',...
-    'maxIters', 10, ...
-    'PV_dif', 0.001e-9, ...[m]
-    'RMS_dif', 0.02e-9, ...[m]
-    'dwellTime_dif', 60, ...[s]
-    'isDownSampling', true, ...
-    'samplingInterval', 1e-3 ... [m]
-);
-
-% options = struct(...
-%     'Algorithm', 'Iterative-FFT-Optimal-DwellTime',...
-%     'maxIters', 10, ...
-%     'PV_dif', 0.001e-9, ...[m]
-%     'RMS_dif', 0.02e-9, ...[m]
-%     'dwellTime_dif', 60, ...[s]
-%     'isDownSampling', true, ...
-%     'samplingInterval', 1e-3 ... [m]
-% );
-
-% unused arguments
-X_brf=0; 
-Y_brf=0; 
-Z_avg=0;
-tmin = 0;
-tmax = 1;
+    'maxIters', 10000,...
+    'RMS_dif', 0.04e-9,...[m]
+    'dwellTime_dif', 1e-2,...[s]
+    'lambda', 2e-3,... % parameter for the total variation (TV) penalty
+    'isDownSampling', true,...
+    'samplingInterval', 1e-3...
+    );
+%     'alpha', 1,... % step size for the additive iterations6
+  
 
 %% 3. Genreate the uniform machining path
 % ca_range in [pixel% clear aperture (ca) range
@@ -76,32 +50,31 @@ ca_range.x_e = round(x_e / pixel_m);
 ca_range.y_s = round(y_s / pixel_m); 
 ca_range.y_e = round(y_e / pixel_m);
 
-%% 4. Run the algorithm
+%% 4. Algorithm
+% unused arguments
+X_brf=0; 
+Y_brf=0; 
+Z_avg=0;
+
 tic;
-[B... BRF
-    , X_B, Y_B...BRF Coordinates
-    , X, Y...full aperture coordinates [m]
-    , Z_removal, Z_residual... full aperture results [m]
-    , T_P... dwell time on the dwell grid [s]
-    , T_P_Real...
-    , X_P, Y_P...dwell grid 
-    , X_dw, Y_dw, dw_range ... dwell grid coordinates [m]
-    , Z_to_remove_dw, Z_removal_dw, Z_residual_dw...dwell grid results [m]
-    , X_ca, Y_ca... clear aperture coordinates [m]
-    , Z_to_remove_ca, Z_removal_ca, Z_residual_ca...[m]
-    ] = DwellTime2D_FFT_Full...
+[ B, X_B, Y_B...
+, X, Y, Z_removal, Z_residual...
+, T_P, X_P, Y_P...
+, X_dw, Y_dw...
+, Z_to_remove_dw, Z_removal_dw, Z_residual_dw...dwell grid results [m]
+, X_ca, Y_ca, Z_to_remove_ca, Z_removal_ca, Z_residual_ca...
+    ] = DwellTime2D_Bayesian...
     ( Z_to_remove... height to remove [m]
-    , BRF_params... BRF parameters
     , 'model'...
+    , BRF_params... BRF parameters
     , X_brf, Y_brf, Z_avg...
     , ca_range... Clear aperture range [pixel] 
     , pixel_m... pixel size [m/pixel]
-    , tmin, tmax...
     , options...
-    , 1);
+    );
 toc;
 
-%% 5. Display results
+%% Display results
 DwellTime2D_FFT_ShowResults(...
     B, X_B, Y_B,...
     X, Y,  Z_to_remove, Z_removal, Z_residual,... 
