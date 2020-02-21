@@ -142,10 +142,12 @@ subplot(339);
 s = surf(X_ca_mm, Y_ca_mm, Z_residual_ca_nm);
 s.EdgeColor = 'none';
 axis image; 
+rms_Z = nanstd(Z_residual_ca_nm(:),1);
+caxis([-1 1]*3*rms_Z);
 c = colorbar;
 c.Label.String = 'Height [nm]';
 title({'Height Residual in Clear Aperture',...
-      ['PV = ' num2str(SmartPTV(Z_residual_ca_nm(:))) ' nm, ' 'RMS = ' num2str(nanstd(Z_residual_ca_nm(:),1)) ' nm']},...
+      ['PV = ' num2str(SmartPTV(Z_residual_ca_nm(:))) ' nm, ' 'RMS = ' num2str(rms_Z) ' nm']},...
     'FontWeight', 'normal',...
     'FontSize', 12);
 xlabel('x [mm]', 'FontSize', 12);
