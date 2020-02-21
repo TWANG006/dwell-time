@@ -6,7 +6,7 @@ addpath(genpath('../../../ibf_engine'));
 
 %% 1. Load the simulation result
 data_dir = '../../../data/sims/';
-surf_file = 'ibf_2d_70x30_0.1mm_s50_std0.3.mat';
+surf_file = 'ibf_2d_70x30_0.12051mm_s50_std0.3.mat';
 load([data_dir surf_file], 'X', 'Y', 'Z', 'Z_to_remove', 'pixel_m', 'zUnit_m');
 
 %% 2. Define the BRF parameters
