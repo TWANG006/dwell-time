@@ -253,7 +253,7 @@ if options.isDownSampling == true
     Nr = numel(Z_to_remove);
     
     % Assemble the BRF matrix C, size(C) = Nr x Nt and vector d
-    [C, d, C_T] = DwellTime2D_FFT_Assemble_C_d(Nr, Nt, BRF_params, Z_to_remove, X, Y, P, ca_range);
+    [C, d, C_T] = DwellTime2D_Assemble_C_d(Nr, Nt, BRF_params, Z_to_remove, X, Y, P,X_BRF, Y_BRF, Z_BRF, ca_range, BRF_mode);
 
     % Down sample T_dw
     T_P = imresize(T_P, 1/interval_P_m, 'bicubic') * interval_P_m.^2;
