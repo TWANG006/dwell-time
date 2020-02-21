@@ -11,7 +11,7 @@ std_m = 0.3e-9;     % noise level
 
 %% 1. Simulate the Surface error map using Legendre polynomials
 
-range_x_mm = 100;  % mm
+range_x_mm = 70;  % mm
 range_y_mm = 30;   % mm
 
 range_x = range_x_mm*1e-3;   
