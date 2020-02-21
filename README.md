@@ -15,7 +15,7 @@ IBFest is the research code for ion beam figuring (IBF) system for synchrotron X
     - [x] Constrained Linear Least Squares (CLLS) + Coarse-to-Fine scheme [6, 7]
 
 ## Reference
-<sub>
+
 [1] [Carnal, C. L., Egert, C. M., & Hylton, K. W. (1992, December). Advanced matrix-based algorithm for ion-beam milling of optical components. In Current Developments in Optical Design and Optical Engineering II (Vol. 1752, pp. 54-62). International Society for Optics and Photonics.](https://doi.org/10.1117/12.130719)
 
 [2] [Wilson, S. R., & McNeil, J. R. (1987, January). Neutral ion beam figuring of large optical surfaces. In Current Developments in Optical Engineering II (Vol. 818, pp. 320-324). International Society for Optics and Photonics.](https://doi.org/10.1117/12.978903)
@@ -33,4 +33,3 @@ IBFest is the research code for ion beam figuring (IBF) system for synchrotron X
 [8] [Wang, T., Huang, L., Tayabaly, K., & Idir, M. (2019, November). Study on the performances of dwell time algorithms in ion beam figuring. In Optifab 2019 (Vol. 11175, p. 111750M). International Society for Optics and Photonics.](https://doi.org/10.1117/12.2536869)
 
 [9] T. Wang, L. Huang, H. Kang, H. Choi, D. W. Kim, K. Tayabaly, andM. Idir, “Rifta: a robust iterative fourier transform-based dwell time algo-rithm for ion beam figuring,” Sci. Reports, Under peer review(2019)
-</sub>
