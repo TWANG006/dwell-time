@@ -1,6 +1,9 @@
 function Z_fitted = BRFGaussian2D(X, Y, t, params)
-% 2D Gaussian Beam removal function model:
-%   Z(X, Y) = tt*A*exp(-((X-u_x)^2/2*sigma_x^2+(Y-u_y)^2/2*sigma_y^2))
+% Function:
+%   Z_fitted = BRFGaussian2D(X, Y, t, params)
+% Purpose:
+%   2D Gaussian Beam removal function model:
+%       Z(X, Y) = tt*A*exp(-((X-u_x)^2/2*sigma_x^2+(Y-u_y)^2/2*sigma_y^2))
 % Inputs:
 %      X, Y: 2D x, y coordinate grids
 %         t: 1D array of scalar of dwell time in seconds [s]
@@ -9,6 +12,10 @@ function Z_fitted = BRFGaussian2D(X, Y, t, params)
 % Outputs:
 %  z_fitted: 2D matrix or 1D array of the calculated 2D Gaussian 
 %            function map [m]
+%
+% Info:
+%   Contact: tianyiwang666@gmail.com (Dr WANG Tianyi)
+%   Copyright reserved.
 %--------------------------------------------------------------------------
 % Get the parameters
 A = params(1);

@@ -18,7 +18,8 @@ function [T ... [s] dwell map of the 2D IBF
     , resampling_method...
     )
 
-% This function implements the matrix-based Trancated SVD dwell time algorithm
+% Purpose:
+%   This function implements the matrix-based Trancated SVD dwell time algorithm
 %
 %                 Nt
 %   r(xk, yk) = Sigma C(xk - ui, yk-vi)T(ui, vi)
