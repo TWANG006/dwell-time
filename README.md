@@ -13,6 +13,7 @@ IBFest is the research code for ion beam figuring (IBF) system for synchrotron X
     - [x] Truncated SVD (TSVD) [3]
     - [x] LSQR [1, 5]
     - [x] Constrained Linear Least Squares (CLLS) + Coarse-to-Fine scheme [6, 7]
+- Thresholded inverse filtering assisted by Nelder-Mead Simplex algorithm [9]
 
 ## Usage
 **Note:**
