@@ -24,10 +24,10 @@ r_p = floor(BRF_params.d_pix*0.5);
 %% 3. Genreate the uniform machining path
 % ca_range in [pixel% clear aperture (ca) range
 x_range = 50e-3;                % range x [m]
-y_range = 10e-3;                % range y [m]
+y_range = 5e-3;                % range y [m]
 
 x_s = BRF_params.d + pixel_m;   % x start [m]
-y_s = BRF_params.d + pixel_m;   % x end [m]
+y_s = BRF_params.d + 2.5e-3 + pixel_m;   % x end [m]
 
 x_e = x_s + x_range;            % x end [m]
 y_e = y_s + y_range;            % y end [m]
