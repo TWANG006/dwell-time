@@ -14,6 +14,15 @@ IBFest is the research code for ion beam figuring (IBF) system for synchrotron X
     - [x] LSQR [1, 5]
     - [x] Constrained Linear Least Squares (CLLS) + Coarse-to-Fine scheme [6, 7]
 
+## Usage
+**Note: all the units used in the code are metres unless otherwise specified.**
+
+The common arguments that are required for IBFest dwell time calculation include:
+  - Beam Removal Function (BRF): the BRF can come from either the measurement or model, by choosing ```avg``` or ```model```, respectively. If 'model' is chosen, the parameters for a 2D Gaussian should be set, includeing the Peak Removal Rate (PRR) ```A```, the ```Sigma```, the diameter ```d```, and the centers ```u```. If 'avg' is chosen, ```X_brf```, ```Y_brf```, and ```Z_brf``` should be provided. 
+  - Z_to_remove: the desired height to be removed. 
+  - ca_range: the range of the Clear Aperture (CA), which is a struct contains ```x_s```, ```y_s```, ```x_e```, and ```y_e```, which are the start and end coordinates (units are meters) of the CA. 
+  - dw_range: the range of the DWell grid (DW), which should be larger than ca_range at least the radius of the BRF on each side.
+
 ## Reference
 
 [1] [Carnal, C. L., Egert, C. M., & Hylton, K. W. (1992, December). Advanced matrix-based algorithm for ion-beam milling of optical components. In Current Developments in Optical Design and Optical Engineering II (Vol. 1752, pp. 54-62). International Society for Optics and Photonics.](https://doi.org/10.1117/12.130719)
