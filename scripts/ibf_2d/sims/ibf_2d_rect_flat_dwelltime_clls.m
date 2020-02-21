@@ -57,8 +57,8 @@ Z_avg=0;
 tic
 [T_C, Z_removal_C, Z_residual_C, Z_to_remove_ca, Z_removal_ca_C, Z_residual_ca_C, C_C] = ...
     DwellTime2D_CLLS(Z_to_remove, X, Y, BRF_params, X_brf, Y_brf, Z_avg, X_P_C, Y_P_C, ca_range, max_dt_diff, 'model');
-toc
 
+%% 5. Resample to desired sampling interval
 % Fine sampling interval of dwell positions [pixel] 
 pixel_P_F_m = 1e-3;                       
 interval_P_1 = round(pixel_P_F_m / pixel_m);
@@ -69,18 +69,9 @@ Y_P_F = Y(dw_range.y_s:interval_P_1:dw_range.y_e, dw_range.x_s:interval_P_1:dw_r
 
 % Interpolation
 [T_F, Z_removal_F, Z_residual_F, Z_removal_ca_F, Z_residual_ca_F, C_F] = ...
-    DwellTime2D_CLLS_Refine(Z_to_remove, X, Y, BRF_params, T_C, X_P_C, Y_P_C, X_P_F, Y_P_F);
+    DwellTime2D_CLLS_Refine(Z_to_remove, X, Y, BRF_params, X_brf, Y_brf, Z_avg, T_C, X_P_C, Y_P_C, X_P_F, Y_P_F, ca_range, 'model');
+toc
 
-%% 5. Show the results
+%% 6. Show the results
 DwellTime2D_Matrix_ShowResults(X, Y, Z_to_remove, Z_removal_C, Z_residual_C, Z_to_remove_ca, Z_removal_ca_C, Z_residual_ca_C, X_P_C, Y_P_C, T_C, ca_range);
 
-%% 5. Save the coarse results
-% coarse_filename = [surfaceMap_filename(1:end-4) '_CLLS_Coarse'];
-% save([coarse_filename, '.mat'], ...
-%     'BRF_params', ...
-%     'x_start', 'y_start',...
-%     'pixel_m', 'pixel_P_C_m',...
-%     'X', 'Y', 'Z_to_remove', 'Z_removal_C', 'Z_residual_C',...
-%     'C_C',...
-%     'Z_to_remove_ca', 'Z_removal_ca_C', 'Z_residual_ca_C',...
-%     'X_P_C', 'Y_P_C', 'T_C');
