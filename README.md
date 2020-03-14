@@ -7,8 +7,8 @@ IBFest is the research code for ion beam figuring (IBF) system for synchrotron X
 - Dwell time calculation algorithms
   - Fourier domain methods
     - [x] Bayesian iterative method [4]
-    - [ ] Fourier transform + Inverse filtering [2]
-    - [ ] Robust Iterative Fourier Trasform-based dwell time Algorithm (RIFTA) [8, 9]
+    - [x] Fourier transform + Inverse filtering [2]
+    - [x] Robust Iterative Fourier Trasform-based dwell time Algorithm (RIFTA) [8, 9]
   - Matrix-based methods
     - [x] Truncated SVD (TSVD) [3]
     - [x] LSQR [1, 5]
