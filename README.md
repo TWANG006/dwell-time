@@ -46,4 +46,4 @@ The common arguments that are required for IBFest dwell time calculation include
 
 [8] [Wang, T., Huang, L., Tayabaly, K., & Idir, M. (2019, November). Study on the performances of dwell time algorithms in ion beam figuring. In Optifab 2019 (Vol. 11175, p. 111750M). International Society for Optics and Photonics.](https://doi.org/10.1117/12.2536869)
 
-[9] T. Wang, L. Huang, H. Kang, H. Choi, D. W. Kim, K. Tayabaly, andM. Idir, “Rifta: a robust iterative fourier transform-based dwell time algo-rithm for ion beam figuring,” Sci. Reports, Under peer review(2019)
+[9] T. Wang, L. Huang, H. Kang, H. Choi, D. W. Kim, K. Tayabaly, andM. Idir, “Rifta: a robust iterative fourier transform-based dwell time algo-rithm for ion beam figuring,” Sci. Reports, Resubmitting after revision (2019)
