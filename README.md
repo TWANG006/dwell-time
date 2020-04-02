@@ -48,4 +48,4 @@ The common arguments that are required for IBFest dwell time calculation include
 
 [9] T. Wang, L. Huang, H. Kang, H. Choi, D. W. Kim, K. Tayabaly, andM. Idir, “Rifta: a robust iterative fourier transform-based dwell time algo-rithm for ion beam figuring,” Sci. Reports, Resubmited after revision (2020)
 
-[10] T. Wang, L. Huang, Y. Zhu, M. Vescovi, D. Khune, H. Kang, H. Choi, D. Kim, K. Tayabaly, N. Bouet, and M. Idir, "Development of a position–velocity–time-modulated two-dimensional ion beam figuring system for synchrotron x-ray mirror fabrication," Appl. Opt.  59, 3306-3314 (2020)
+[10] [T. Wang, L. Huang, Y. Zhu, M. Vescovi, D. Khune, H. Kang, H. Choi, D. Kim, K. Tayabaly, N. Bouet, and M. Idir, "Development of a position–velocity–time-modulated two-dimensional ion beam figuring system for synchrotron x-ray mirror fabrication," Appl. Opt.  59, 3306-3314 (2020).](https://doi.org/10.1364/AO.389010)
