@@ -103,8 +103,8 @@ BRF_params.d_pix = d_p;
 [mM, nM] = size(Z_to_remove);   
 
 % Get the dwell grid pixel range
-dw_range.x_s = ca_range.x_s - r_p - 1;   dw_range.x_e = ca_range.x_e + r_p + 1;
-dw_range.y_s = ca_range.y_s - r_p - 1;   dw_range.y_e = ca_range.y_e + r_p + 1;
+dw_range.x_s = ca_range.x_s - r_p;   dw_range.x_e = ca_range.x_e + r_p;
+dw_range.y_s = ca_range.y_s - r_p;   dw_range.y_e = ca_range.y_e + r_p;
 
 % Determine if the range is valid
 if(dw_range.x_s<1 || dw_range.x_e >nM || dw_range.y_s <1 || dw_range.y_e > mM)
