@@ -1,7 +1,9 @@
 
-addpath(genpath('../../../ibf_engine'));
+addpath(genpath('../../../../ibf_engine'));
 
 %% 1. Load the simulation result
+load('TIFProblems_Variables.mat');
+
 Z = Z_residual_1*1e-9;
 Z_to_remove = Z - min(Z(~isnan(Z(:))));
 
@@ -10,7 +12,7 @@ pixel_m = dx/1000;
 
 %% 2. Define the BRF parameters
 
-FWHM = BRF_FWHM_2; %mm
+FWHM = 13; %mm
 
 BRF_params.A = 1e-9;                                      % Peak removal rate [m/s]
 BRF_params.sigma_xy = FWHM2Sigma([FWHM/1000, FWHM/1000]); % Sigma from FWHM

@@ -12,10 +12,10 @@ function gamma = DwellTime2D_FFT_OptimizeGamma(gamma0, Z_to_remove, Z_to_remove_
 
 if(strcmp(flag, 'entire'))
     fun = @(gamma)Objective_Func_Entire(gamma, Z_to_remove, B, dw_range, ca_range, useDCT);
-    gamma = fminsearch(fun, gamma0);
+    gamma = patternsearch(fun, gamma0);
 elseif(strcmp(flag, 'dwell'))
     fun = @(gamma)Objective_Func_DwellGrid(gamma, Z_to_remove, Z_to_remove_dw, B, dw_range, ca_range, useDCT);
-    gamma = fminsearch(fun, gamma0); 
+    gamma = patternsearch(fun, gamma0); 
 else
     gamma = gamma0;
 end
@@ -44,8 +44,8 @@ end
 function fGamma = Objective_Func_DwellGrid(gamma, Z_to_remove, Z_to_remove_dw, B, dw_range, ca_range, useDCT)
 
 % The ca in dw range
-ca_in_dw_y_s = ca_range.y_s - dw_range.y_s;
-ca_in_dw_x_s = ca_range.x_s - dw_range.x_s;
+ca_in_dw_y_s = ca_range.y_s - dw_range.y_s + 1;
+ca_in_dw_x_s = ca_range.x_s - dw_range.x_s + 1;
 ca_in_dw_y_e = ca_in_dw_y_s + ca_range.y_e - ca_range.y_s;
 ca_in_dw_x_e = ca_in_dw_x_s + ca_range.x_e - ca_range.x_s;
 
