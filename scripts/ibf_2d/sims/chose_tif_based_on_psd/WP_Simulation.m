@@ -12,7 +12,7 @@ pixel_m = dx/1000;
 
 %% 2. Define the BRF parameters
 
-FWHM = 13; %mm
+FWHM = BRF_FWHM_2; %mm
 
 BRF_params.A = 1e-9;                                      % Peak removal rate [m/s]
 BRF_params.sigma_xy = FWHM2Sigma([FWHM/1000, FWHM/1000]); % Sigma from FWHM
