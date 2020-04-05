@@ -10,12 +10,14 @@ function gamma = DwellTime2D_FFT_OptimizeGamma(gamma0, Z_to_remove, Z_to_remove_
 %                r: the radius of b
 %             flag: 'entire' for entire aperture calculation; 'dwell' for dwell grid calculation
 
+options = optimoptions('patternsearch','Display', 'off');
+
 if(strcmp(flag, 'entire'))
     fun = @(gamma)Objective_Func_Entire(gamma, Z_to_remove, B, dw_range, ca_range, useDCT);
-    gamma = patternsearch(fun, gamma0);
+    gamma = patternsearch(fun, gamma0, [], [], [], [], [], [], [], options);
 elseif(strcmp(flag, 'dwell'))
     fun = @(gamma)Objective_Func_DwellGrid(gamma, Z_to_remove, Z_to_remove_dw, B, dw_range, ca_range, useDCT);
-    gamma = patternsearch(fun, gamma0); 
+    gamma = patternsearch(fun, gamma0, [], [], [], [], [], [], [], options); 
 else
     gamma = gamma0;
 end

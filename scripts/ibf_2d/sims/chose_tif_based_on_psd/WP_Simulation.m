@@ -1,3 +1,6 @@
+clear;
+close all;
+clc;
 
 addpath(genpath('../../../../ibf_engine'));
 
