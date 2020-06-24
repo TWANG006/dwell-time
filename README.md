@@ -16,6 +16,9 @@ IBFest is the research code for ion beam figuring (IBF) system for synchrotron X
 - Thresholded inverse filtering assisted by Nelder-Mead Simplex algorithm [9]
 - High-performance 2D convolution using FFT
 
+## RIFTA example results
+![RIFTA results](/images/RIFTA_results.png)
+
 ## Usage
 **Note:**
   - The CLLS algorithm applies 'active-set' algorithm to solve the CLLS equations. This function has been removed from MATLAB since 2016b. This algorithm is preferred since it converges faster than the other two. 
