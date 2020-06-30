@@ -9,7 +9,7 @@ function [B... BRF
     , Z_to_remove_dw, Z_removal_dw, Z_residual_dw...dwell grid results [m]
     , X_ca, Y_ca... clear aperture coordinates [m]
     , Z_to_remove_ca, Z_removal_ca, Z_residual_ca...[m]
-    ] = DwellTime2D_FFT_Full...
+    ] = DwellTime2D_RIFTA...
     ( Z_to_remove... height to remove [m]
     , BRF_params... BRF parameters
     , BRF_mode... 'avg' or 'model'
