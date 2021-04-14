@@ -1,5 +1,5 @@
 ## Introduction
-IBFest is the research code for ion beam figuring (IBF) system for synchrotron X-ray mirrors designed and developed by the Optical Metrology and Fabrication Group at National Synchrotron Light Source II (NSLS-II), NY, US. 
+RIFTA is the research code for ion beam figuring (IBF) system for synchrotron X-ray mirrors designed and developed by the Optical Metrology and Fabrication Group at National Synchrotron Light Source II (NSLS-II), NY, US. 
 
 ## Implemented algorithms
 - Rectangular surface error map simulation using 2D Lengendre polynomials
