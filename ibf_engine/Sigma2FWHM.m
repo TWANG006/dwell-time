@@ -16,7 +16,6 @@ function FWHM = Sigma2FWHM(sigma)
 %   Contact: tianyiwang666@gmail.com (Dr WANG Tianyi)
 %   Copyright reserved.
 
-
 FWHM = 2*sqrt(2*log(2))*sigma;
 
 end
